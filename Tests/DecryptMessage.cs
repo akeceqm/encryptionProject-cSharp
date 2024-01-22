@@ -23,19 +23,12 @@ public class DecryptMessage
                     {
                         byte[] buffer = new byte[4096];
                         int bytesRead;
-                        try
+
+                        while ((bytesRead = csDecrypt.Read(buffer, 0, buffer.Length)) > 0)
                         {
-                            while ((bytesRead = csDecrypt.Read(buffer, 0, buffer.Length)) > 0)
-                            {
-                                msPlain.Write(buffer, 0, bytesRead);
-                            }
-                        }
-                        catch (CryptographicException)
-                        {
-                            // Ignore CryptographicException - it may occur if the last block is not complete
+                            msPlain.Write(buffer, 0, bytesRead);
                         }
 
-                        // Возвращаем результат после обработки всех данных
                         return Encoding.UTF8.GetString(msPlain.ToArray());
                     }
                 }
