@@ -13,7 +13,9 @@ namespace EncryptionProject;
         Register register = new Register();
 
         User newUser = register.InputUserData();
-
+        Message message = new Message();
+        message.EncryptMessage();
+        message.DecryptorMessage();
 
         Console.ReadLine();
     }
