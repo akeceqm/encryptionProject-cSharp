@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace EncryptionProject;
 
-    public class Program
-    {
+public class Program
+{
     static void Main(string[] args)
     {
+
         Register register = new Register();
 
         User newUser = register.InputUserData();
@@ -19,4 +20,4 @@ namespace EncryptionProject;
 
         Console.ReadLine();
     }
-    }
+}

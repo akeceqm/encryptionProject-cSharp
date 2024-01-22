@@ -8,25 +8,10 @@ namespace EncryptionProject;
 public class Message
 {
     public string TextMessage { get; private set; }
-    public string DescryptionCode { get;}
-    public string IdAccountUserRecipient { get; private set; }
 
     private byte[] encryptionKey;
     private byte[] encryptionIV;
     private byte[] encryptedText;
-
-    public Message()
-    {
-
-
-        Console.Write("Введите логин получаетя: ");
-        IdAccountUserRecipient = Console.ReadLine();
-
-        
-
-        Console.Write("Введите код для дешифрования: ");
-        DescryptionCode = Console.ReadLine();
-    }
 
     public void DisplayMessage()
     {
